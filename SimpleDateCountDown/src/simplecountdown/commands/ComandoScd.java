@@ -28,6 +28,9 @@ public class ComandoScd implements CommandExecutor{
 			Player jugador = (Player) sender;
 			
 			switch(args[0]) {
+				case "add":
+					//Crear el countdown de una fecha especifica
+					break;
 				case "set":
 					if(args[1].contentEquals("countdownname")) {
 						//Comandos para modificar el nombre de la cuenta regresiva
@@ -42,6 +45,9 @@ public class ComandoScd implements CommandExecutor{
 							//comando incorrecto
 						}
 					}
+					break;
+				case "delete":
+					//Eliminar countdown
 					break;
 				case "enable":
 					//se activa la visualización del countdown en scoreboard
