@@ -1,9 +1,14 @@
 package simplecountdown.commands;
+import java.text.SimpleDateFormat;
+
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import clases.Countdown;
 
 public class ComandoScd implements CommandExecutor{
 	
@@ -29,7 +34,17 @@ public class ComandoScd implements CommandExecutor{
 			
 			switch(args[0]) {
 				case "add":
-					//Crear el countdown de una fecha especifica
+					String nameCountDown = "hola"; /*Se le asigna lo que escribe a esta variable*/
+					SimpleDateFormat dateCountDown; /*Se le asigna lo que escribe a esta variable*/
+					dateCountDown = new SimpleDateFormat("dd/mm/YYYY");
+					
+					/**
+					 *Se deben validar los vlores ingresados (nombre y fecha (que cumpla con el formato)) 
+					 */
+					
+					//crear clase countdown
+					Countdown contador = new Countdown(nameCountDown,dateCountDown);
+					
 					break;
 				case "set":
 					if(args[1].contentEquals("countdownname")) {
@@ -42,7 +57,7 @@ public class ComandoScd implements CommandExecutor{
 							return true;
 						}
 						else {
-							//comando incorrecto
+							jugador.sendMessage(appname+ChatColor.RED+" No existe el comando!");
 						}
 					}
 					break;
@@ -56,7 +71,7 @@ public class ComandoScd implements CommandExecutor{
 					//se desactiva la visualización del countdown en scoreboard
 					return true;
 				default:
-					//comando incorrecto
+					jugador.sendMessage(appname+ChatColor.RED+" No existe el comando!");
 			}
 		}
 		return false;
