@@ -1,4 +1,4 @@
-main: simplecountdown
+main: simplecountdown.SimpleDateCountdown
 version: 1.0.1
 name: SimpleDateCountdown
 api-version: 1.15

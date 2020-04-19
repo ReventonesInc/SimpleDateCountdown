@@ -22,7 +22,6 @@ public class SimpleDateCountdown extends JavaPlugin {
 		Bukkit.getConsoleSender().sendMessage(nombre+" ha sido cargado (Versión :"+version+")");
 		cuentaRegresiva = new Countdown();
 		//CARGAR DATOS DE ARCHIVO YML
-		
 		registerCommands();
 		registerEvents();
 
