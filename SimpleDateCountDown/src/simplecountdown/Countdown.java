@@ -3,38 +3,38 @@ package simplecountdown;
 import java.text.SimpleDateFormat;
 
 public class Countdown{
-	private String countDownName;
-	private SimpleDateFormat countDownDate;
+	private String countdownName;
+	private SimpleDateFormat countdownDate;
 	
-	public Countdown(String countDownName, SimpleDateFormat countDownDate) {
-		this.countDownName = countDownName;
-		this.countDownDate = countDownDate;
+	public Countdown(String countdownName, SimpleDateFormat countdownDate) {
+		this.countdownName = countdownName;
+		this.countdownDate = countdownDate;
 	}
 	
-	public Countdown(String countDownName) {
-		this.countDownName = countDownName;
-		this.countDownDate = null;
+	public Countdown(String countdownName) {
+		this.countdownName = countdownName;
+		this.countdownDate = null;
 		//COMENTARIO PARA PUSHEAR
 	}
 	
 	public Countdown() {
-		this.countDownName = null;
-		this.countDownDate = null;
+		this.countdownName = null;
+		this.countdownDate = null;
 	}
 	
-	public String getCountDownName() {
-		return countDownName;
+	public String getCountdownName() {
+		return countdownName;
 	}
 	
-	public void setCountDownName(String name) {
-		this.countDownName = name;
+	public void setCountdownName(String name) {
+		this.countdownName = name;
 	}
 	
-	public SimpleDateFormat getCountDownDate() {
-		return countDownDate;
+	public SimpleDateFormat getCountdownDate() {
+		return countdownDate;
 	}
 	
-	public void setCountDownDate(SimpleDateFormat date) {
-		this.countDownDate = date;
+	public void setCountdownDate(SimpleDateFormat date) {
+		this.countdownDate = date;
 	}
 }
