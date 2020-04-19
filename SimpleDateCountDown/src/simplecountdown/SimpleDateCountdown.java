@@ -3,7 +3,6 @@ package simplecountdown;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -15,6 +14,7 @@ public class SimpleDateCountdown extends JavaPlugin {
 	
 	public void onEnable() {
 		Bukkit.getConsoleSender().sendMessage(nombre+" ha sido cargado correctamente (Versión :"+version+")");
+
 		
 	}
 	
