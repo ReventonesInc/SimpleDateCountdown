@@ -2,5 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/Users/ceap2/ProyectosEclipse/SimpleDateCountDown/Librerias/BuildTools.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ceap2/ProyectosEclipse/SimpleDateCountDown/Librerias/PlaceholderAPI-2.10.5.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ceap2/ProyectosEclipse/SimpleDateCountDown/Librerias/spigot-1.15.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
