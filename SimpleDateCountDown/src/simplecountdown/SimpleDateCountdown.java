@@ -8,12 +8,21 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class SimpleDateCountdown extends JavaPlugin {
-	PluginDescriptionFile archivoPlugin = getDescription();
+	public PluginDescriptionFile archivoPlugin = getDescription();
 	public String version = archivoPlugin.getVersion();
 	public String nombre = ChatColor.DARK_RED+"["+ChatColor.YELLOW+archivoPlugin.getName()+ChatColor.DARK_RED+"]";
+	public Countdown cuentaRegresiva;
+	
+	
+	public SimpleDateCountdown() {
+		
+	}
 	
 	public void onEnable() {
 		Bukkit.getConsoleSender().sendMessage(nombre+" ha sido cargado (Versión :"+version+")");
+		cuentaRegresiva = new Countdown();
+		//CARGAR DATOS DE ARCHIVO YML
+		
 		registerCommands();
 		registerEvents();
 

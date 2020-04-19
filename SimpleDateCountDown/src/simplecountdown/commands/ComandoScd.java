@@ -8,7 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import clases.Countdown;
+import simplecountdown.Countdown;
 
 public class ComandoScd implements CommandExecutor{
 	
@@ -34,17 +34,11 @@ public class ComandoScd implements CommandExecutor{
 			
 			switch(args[0]) {
 				case "add":
-					String nameCountDown = "hola"; /*Se le asigna lo que escribe a esta variable*/
-					SimpleDateFormat dateCountDown; /*Se le asigna lo que escribe a esta variable*/
-					dateCountDown = new SimpleDateFormat("dd/mm/YYYY");
 					
 					/**
 					 *Se deben validar los vlores ingresados (nombre y fecha (que cumpla con el formato)) 
 					 */
-					
 					//crear clase countdown
-					Countdown contador = new Countdown(nameCountDown,dateCountDown);
-					
 					break;
 				case "set":
 					if(args[1].contentEquals("countdownname")) {
@@ -62,12 +56,15 @@ public class ComandoScd implements CommandExecutor{
 					}
 					break;
 				case "delete":
+					jugador.sendMessage(appname+ChatColor.WHITE+" Cuenta regresiva eliminada");
 					//Eliminar countdown
 					break;
 				case "enable":
+					jugador.sendMessage(appname+ChatColor.WHITE+" Cuenta activada");
 					//se activa la visualización del countdown en scoreboard
 					return true;
 				case "disable":
+					jugador.sendMessage(appname+ChatColor.WHITE+" Cuenta regresiva desactivada");
 					//se desactiva la visualización del countdown en scoreboard
 					return true;
 				default:

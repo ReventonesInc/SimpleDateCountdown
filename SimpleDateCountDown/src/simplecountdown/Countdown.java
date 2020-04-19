@@ -1,4 +1,4 @@
-package clases;
+package simplecountdown;
 
 import java.text.SimpleDateFormat;
 
@@ -9,6 +9,16 @@ public class Countdown{
 	public Countdown(String countDownName, SimpleDateFormat countDownDate) {
 		this.countDownName = countDownName;
 		this.countDownDate = countDownDate;
+	}
+	
+	public Countdown(String countDownName) {
+		this.countDownName = countDownName;
+		this.countDownDate = null;
+	}
+	
+	public Countdown() {
+		this.countDownName = null;
+		this.countDownDate = null;
 	}
 	
 	public String getCountDownName() {
