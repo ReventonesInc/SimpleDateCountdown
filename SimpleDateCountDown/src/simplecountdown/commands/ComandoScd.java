@@ -46,10 +46,10 @@ public class ComandoScd implements CommandExecutor{
 				case "enable":
 					//se activa la visualización del countdown en scoreboard
 					return true;
-			case "disable":
+				case "disable":
 					//se desactiva la visualización del countdown en scoreboard
 					return true;
-			default:
+				default:
 					//comando incorrecto
 			}
 		}
