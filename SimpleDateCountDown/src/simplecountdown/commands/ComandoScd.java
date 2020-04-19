@@ -26,39 +26,32 @@ public class ComandoScd implements CommandExecutor{
 		}
 		else {
 			Player jugador = (Player) sender;
-			if(args[0].contentEquals("set")) {
-				if(args[1].contentEquals("countdownname")) {
-					
-					//Comandos para modificar el nombre de la cuenta regresiva
-					
-					return true;
-					
-				}
-				else {
-					if(args[1].contentEquals("date")) {
-						
-						//Moficicación de la fecha
-						return true;
-						
-					}
-				}
-			}
-			else {
-				if(args[0].contentEquals("enable")){
-					
-					//Activa la visualización del countdown
-					return true;
-				}
-				else {
-					if(args[0].contentEquals("disable")) {
-						
-					
-						//Desabilita la visalización del countdown
-						return true;
-					}
-				}
-			}
 			
+			switch(args[0]) {
+				case "set":
+					if(args[1].contentEquals("countdownname")) {
+						//Comandos para modificar el nombre de la cuenta regresiva
+						return true;
+					}
+					else {
+						if(args[1].contentEquals("date")) {
+							//Se modifica la fecha del contador
+							return true;
+						}
+						else {
+							//comando incorrecto
+						}
+					}
+					break;
+				case "enable":
+					//se activa la visualización del countdown en scoreboard
+					return true;
+			case "disable":
+					//se desactiva la visualización del countdown en scoreboard
+					return true;
+			default:
+					//comando incorrecto
+			}
 		}
 		return false;
 	}

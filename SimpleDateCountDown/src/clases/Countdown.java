@@ -3,27 +3,27 @@ package clases;
 import java.text.SimpleDateFormat;
 
 public class Countdown{
-	private String countdownName;
-	private SimpleDateFormat countdownDate;
+	private String countDownName;
+	private SimpleDateFormat countDownDate;
 	
-	public Countdown(String countdownName, SimpleDateFormat countdownDate) {
-		this.countdownName = countdownName;
-		this.countdownDate = countdownDate;
+	public Countdown(String countDownName, SimpleDateFormat countDownDate) {
+		this.countDownName = countDownName;
+		this.countDownDate = countDownDate;
 	}
 	
-	public String getCountdownName() {
-		return countdownName;
+	public String getCountDownName() {
+		return countDownName;
 	}
 	
-	public void setCountdownName(String name) {
-		this.countdownName = name;
+	public void setCountDownName(String name) {
+		this.countDownName = name;
 	}
 	
-	public SimpleDateFormat getCountdownDate() {
-		return countdownDate;
+	public SimpleDateFormat getCountDownDate() {
+		return countDownDate;
 	}
 	
-	public void setCountdownName(SimpleDateFormat date) {
-		this.countdownDate = date;
+	public void setCountDownDate(SimpleDateFormat date) {
+		this.countDownDate = date;
 	}
 }
