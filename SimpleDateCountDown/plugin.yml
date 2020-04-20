@@ -3,5 +3,19 @@ version: 1.0.1
 name: SimpleDateCountdown
 api-version: 1.15
 author: [Ardila, XavierKrostya]
-simpledatecountdown: Comando principal de SimpleDateCountdown
-	aliases: [sdc, countdown]
+softdepend:
+    - LuckPerms
+    - PermissionsEx
+    - bPermissions
+    - zPermissions
+    - Multiverse-Core
+    - EssentialsX
+    - ProtocolLib
+commands:
+	simpledatecountdown:
+    		description: Principal SDC Command
+            usage: /simpledatecountdown info|set|delete|enable|disable|reload
+            aliases:
+            - countdown
+            - sdc
+            
