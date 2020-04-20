@@ -58,7 +58,7 @@ public class ComandoScd implements CommandExecutor{
 				case "delete":
 					jugador.sendMessage(appname+ChatColor.WHITE+" Cuenta regresiva eliminada");
 					//Eliminar countdown
-					break;
+					return true;
 				case "enable":
 					jugador.sendMessage(appname+ChatColor.WHITE+" Cuenta activada");
 					//se activa la visualización del countdown en scoreboard
