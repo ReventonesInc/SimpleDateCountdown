@@ -20,19 +20,23 @@ public class SimpleDateCountdown extends JavaPlugin {
 	SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	
 	public void onEnable() {
+		
 		String fecha = "25/04/2020 12:30";
 		//Cargar datos cuenta regresiva
 		cuentaRegresiva = new Countdown("Prueba",fecha);
+		Bukkit.getConsoleSender().sendMessage("\n");
 		Bukkit.getConsoleSender().sendMessage(nombre+" ha sido cargado (Versión :"+version+")");
+		Bukkit.getConsoleSender().sendMessage("\n");
+		
 		registerCommands();
 		registerEvents();
 
 	}
 	
 	public void onDisable() {
+		Bukkit.getConsoleSender().sendMessage("\n");
 		Bukkit.getConsoleSender().sendMessage(nombre+" ha sido desactivado (Versión :"+version+")");
-		
-		
+		Bukkit.getConsoleSender().sendMessage("\n");
 	}
 	
 	public void registerCommands() {

@@ -67,16 +67,18 @@ public class ComandoSdc implements CommandExecutor{
 					return true;
 				case "info":
 					//Muestra la info del plugin
-					jugador.sendMessage(ChatColor.GREEN+"------------------------------------------");
-                	jugador.sendMessage(appname+ChatColor.WHITE+"Versión instalada "+version);
+					jugador.sendMessage(ChatColor.GREEN+"------------"+appname+ChatColor.GREEN+"------------");
+                	jugador.sendMessage("           "+ChatColor.GOLD+"Versión instalada "+version);
                 	jugador.sendMessage(ChatColor.GREEN+"------------------------------------------");
 					return true;
 				case "remaining":
 					jugador.sendMessage(appname+ChatColor.WHITE+cuenta.getTimeRaiming()+"restantes para "+cuenta.getCountdownName());
 					return true;
               	case "view":
-                	jugador.sendMessage(appname+ChatColor.WHITE+" Nombre de la cuenta regresiva: "+ cuenta.getCountdownName());
-                	jugador.sendMessage(appname+ChatColor.WHITE+" Fecha final: "+ cuenta.getCountdownDate());
+              		jugador.sendMessage(ChatColor.GREEN+"------------"+appname+ChatColor.GREEN+"------------");
+                	jugador.sendMessage(ChatColor.WHITE+" Nombre de la cuenta regresiva: "+ cuenta.getCountdownName());
+                	jugador.sendMessage(ChatColor.WHITE+" Fecha final: "+ cuenta.getCountdownDate());
+                	jugador.sendMessage(ChatColor.GREEN+"------------------------------------------");
                 	return true;
 				default:
 					jugador.sendMessage(appname+ChatColor.RED+" No existe el comando!");
