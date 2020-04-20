@@ -1,6 +1,11 @@
 package simplecountdown;
 
 import simplecountdown.commands.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -10,17 +15,23 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class SimpleDateCountdown extends JavaPlugin {
 	public PluginDescriptionFile archivoPlugin = getDescription();
 	public String version = archivoPlugin.getVersion();
-	public String nombre = ChatColor.DARK_RED+"["+ChatColor.YELLOW+archivoPlugin.getName()+ChatColor.DARK_RED+"]";
+	public String nombre = ChatColor.BOLD+""+ChatColor.DARK_RED+"["+ChatColor.GOLD+archivoPlugin.getName()+ChatColor.DARK_RED+"]";
 	public Countdown cuentaRegresiva;
 	
 	
-	public SimpleDateCountdown() {
-		
-	}
-	
 	public void onEnable() {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String fecha = "2020-04-25 12:30";
+		Date fechaPrueba = null;
+		try {
+			fechaPrueba = format.parse(fecha);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		//Cargar datos cuenta regresiva
+		cuentaRegresiva = new Countdown("Prueba",fechaPrueba);
 		Bukkit.getConsoleSender().sendMessage(nombre+" ha sido cargado (Versión :"+version+")");
-		//CARGAR DATOS DE ARCHIVO YML
 		registerCommands();
 		registerEvents();
 
@@ -33,9 +44,9 @@ public class SimpleDateCountdown extends JavaPlugin {
 	}
 	
 	public void registerCommands() {
-		this.getCommand("simpledatecountdown").setExecutor(new ComandoSdc(nombre,version));
-		this.getCommand("sdc").setExecutor(new ComandoSdc(nombre,version));
-		this.getCommand("countdown").setExecutor(new ComandoSdc(nombre,version));
+		this.getCommand("simpledatecountdown").setExecutor(new ComandoSdc(nombre,version,cuentaRegresiva));
+		this.getCommand("sdc").setExecutor(new ComandoSdc(nombre,version,cuentaRegresiva));
+		this.getCommand("countdown").setExecutor(new ComandoSdc(nombre,version,cuentaRegresiva));
 		
 	}
 

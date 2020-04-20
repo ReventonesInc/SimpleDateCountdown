@@ -14,10 +14,12 @@ public class ComandoSdc implements CommandExecutor{
 	
 	private String appname;
 	private String version;
+	private Countdown cuenta;
 	
-	public ComandoSdc(String name, String version){
+	public ComandoSdc(String name, String version, Countdown cuenta){
 		this.appname = name;
 		this.version = version;
+		this.cuenta = cuenta;
 	}
 
 	@Override
@@ -65,7 +67,17 @@ public class ComandoSdc implements CommandExecutor{
 					return true;
 				case "info":
 					//Muestra la info del plugin
+					jugador.sendMessage(ChatColor.GREEN+"------------------------------------------");
+                	jugador.sendMessage(appname+ChatColor.WHITE+"Versión instalada "+version);
+                	jugador.sendMessage(ChatColor.GREEN+"------------------------------------------");
 					return true;
+				case "remaining":
+					jugador.sendMessage(appname+ChatColor.WHITE+cuenta.getTimeRaiming()+"restantes para "+cuenta.getCountdownName());
+					return true;
+              	case "view":
+                	jugador.sendMessage(appname+ChatColor.WHITE+" Nombre de la cuenta regresiva: "+ cuenta.getCountdownName());
+                	jugador.sendMessage(appname+ChatColor.WHITE+" Fecha final: "+ cuenta.getCountdownDate());
+                	return true;
 				default:
 					jugador.sendMessage(appname+ChatColor.RED+" No existe el comando!");
 			}
