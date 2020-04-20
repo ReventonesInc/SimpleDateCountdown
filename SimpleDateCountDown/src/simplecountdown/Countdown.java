@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class Countdown{
 	private String countdownName;
 	private String countdownDate;
-	SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+	private SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	
 	public Countdown(String countdownName, String countdownDate) {
 		this.countdownName = countdownName;
