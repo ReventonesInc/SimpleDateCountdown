@@ -17,20 +17,12 @@ public class SimpleDateCountdown extends JavaPlugin {
 	public String version = archivoPlugin.getVersion();
 	public String nombre = ChatColor.BOLD+""+ChatColor.DARK_RED+"["+ChatColor.GOLD+archivoPlugin.getName()+ChatColor.DARK_RED+"]";
 	public Countdown cuentaRegresiva;
-	
+	SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	
 	public void onEnable() {
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		String fecha = "2020-04-25 12:30";
-		Date fechaPrueba = null;
-		try {
-			fechaPrueba = format.parse(fecha);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		
+		String fecha = "25/04/2020 12:30";
 		//Cargar datos cuenta regresiva
-		cuentaRegresiva = new Countdown("Prueba",fechaPrueba);
+		cuentaRegresiva = new Countdown("Prueba",fecha);
 		Bukkit.getConsoleSender().sendMessage(nombre+" ha sido cargado (Versión :"+version+")");
 		registerCommands();
 		registerEvents();
