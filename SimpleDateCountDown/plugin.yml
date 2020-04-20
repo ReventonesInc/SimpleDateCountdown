@@ -12,10 +12,10 @@ softdepend:
     - EssentialsX
     - ProtocolLib
 commands:
-	simpledatecountdown:
-    		description: Principal SDC Command
-            usage: /simpledatecountdown info|set|delete|enable|disable|reload
-            aliases:
-            - countdown
-            - sdc
+    simpledatecountdown:
+        description: Principal SDC Command
+        usage: /simpledatecountdown info|set|delete|enable|disable|reload
+        aliases:
+          - countdown
+          - sdc
             
