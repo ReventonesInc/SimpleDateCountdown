@@ -2,6 +2,6 @@ main: simplecountdown.SimpleDateCountdown
 version: 1.0.1
 name: SimpleDateCountdown
 api-version: 1.15
-author: Ardila, XavierKrostya
+author: [Ardila, XavierKrostya]
 simpledatecountdown: Comando principal de SimpleDateCountdown
 	aliases: [sdc, countdown]
