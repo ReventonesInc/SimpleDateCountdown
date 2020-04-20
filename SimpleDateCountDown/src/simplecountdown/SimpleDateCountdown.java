@@ -33,8 +33,8 @@ public class SimpleDateCountdown extends JavaPlugin {
 	}
 	
 	public void registerCommands() {
-		this.getCommand("simpledatecountdown").setExecutor(new ComandoScd(nombre,version));
-		this.getCommand("scd").setExecutor(new ComandoScd(nombre,version));
+		this.getCommand("simpledatecountdown").setExecutor(new ComandoSdc(nombre,version));
+		this.getCommand("scd").setExecutor(new ComandoSdc(nombre,version));
 		
 	}
 

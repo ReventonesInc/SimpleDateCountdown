@@ -10,12 +10,12 @@ import org.bukkit.entity.Player;
 
 import simplecountdown.Countdown;
 
-public class ComandoScd implements CommandExecutor{
+public class ComandoSdc implements CommandExecutor{
 	
 	private String appname;
 	private String version;
 	
-	public ComandoScd(String name, String version){
+	public ComandoSdc(String name, String version){
 		this.appname = name;
 		this.version = version;
 	}
@@ -33,13 +33,6 @@ public class ComandoScd implements CommandExecutor{
 			Player jugador = (Player) sender;
 			
 			switch(args[0]) {
-				case "add":
-					
-					/**
-					 *Se deben validar los vlores ingresados (nombre y fecha (que cumpla con el formato)) 
-					 */
-					//crear clase countdown
-					break;
 				case "set":
 					if(args[1].contentEquals("countdownname")) {
 						//Comandos para modificar el nombre de la cuenta regresiva
@@ -59,6 +52,9 @@ public class ComandoScd implements CommandExecutor{
 					jugador.sendMessage(appname+ChatColor.WHITE+" Cuenta regresiva eliminada");
 					//Eliminar countdown
 					return true;
+				case "reload":
+					//Comando reload
+					return true;
 				case "enable":
 					jugador.sendMessage(appname+ChatColor.WHITE+" Cuenta activada");
 					//se activa la visualización del countdown en scoreboard
@@ -66,6 +62,9 @@ public class ComandoScd implements CommandExecutor{
 				case "disable":
 					jugador.sendMessage(appname+ChatColor.WHITE+" Cuenta regresiva desactivada");
 					//se desactiva la visualización del countdown en scoreboard
+					return true;
+				case "info":
+					//Muestra la info del plugin
 					return true;
 				default:
 					jugador.sendMessage(appname+ChatColor.RED+" No existe el comando!");
