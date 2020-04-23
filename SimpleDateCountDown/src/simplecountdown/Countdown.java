@@ -55,12 +55,28 @@ public class Countdown{
             currentDate = format.parse(current_date);
             long diffInMillies = finalDate.getTime() - currentDate.getTime();
             long diffenceInMinutes = TimeUnit.MINUTES.convert(diffInMillies,TimeUnit.MILLISECONDS);
-          		
-          	int daysRemaining = (int)(diffenceInMinutes%1440);
-          	long aux = diffenceInMinutes - (daysRemaining*1440);
-          	int hoursRemaining = (int)(aux%60);
-          	aux = aux-(hoursRemaining*60);
-      		int minutesRemaining = (int)aux;
+            
+          	int daysRemaining = 0;
+          	int hoursRemaining = 0;
+          	int minutesRemaining = 0;
+          	
+            long auxMin = diffenceInMinutes;
+            if(auxMin<0) {
+            	return "La fecha estipulada ya ocurrió o es inválida";
+            }
+            while(auxMin > 1440) {
+            	auxMin-=1440;
+            	daysRemaining++;
+            }
+            while(auxMin > 60) {
+            	auxMin-=60;
+            	hoursRemaining++;
+            }
+            
+            if(auxMin > 0) {
+            	minutesRemaining = (int) auxMin;
+            }
+            
           	
           	String text = daysRemaining+" días, "+hoursRemaining+" horas y "+minutesRemaining+" minutos";
             return text;

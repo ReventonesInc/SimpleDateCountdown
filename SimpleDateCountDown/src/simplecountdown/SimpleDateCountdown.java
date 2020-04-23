@@ -16,8 +16,7 @@ public class SimpleDateCountdown extends JavaPlugin {
 	public PluginDescriptionFile archivoPlugin = getDescription();
 	public String version = archivoPlugin.getVersion();
 	public String nombre = ChatColor.BOLD+""+ChatColor.DARK_RED+"["+ChatColor.GOLD+archivoPlugin.getName()+ChatColor.DARK_RED+"]";
-	public Countdown cuentaRegresiva;
-	SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+	public static Countdown cuentaRegresiva;
 	
 	public void onEnable() {
 		
