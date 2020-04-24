@@ -43,7 +43,6 @@ public class ComandoSdc implements CommandExecutor{
 				case "set":
 					if(args[1].contentEquals("name")) {
 						if(!args[2].isEmpty()) {
-							SimpleDateCountdown.cuentaRegresiva.setCountdownName(args[2]);
 							//GUARDAR en YAML
 							return true;
 						}
@@ -56,7 +55,6 @@ public class ComandoSdc implements CommandExecutor{
 						if(args[1].contentEquals("date")) {
 							if(!args[2].isEmpty()) {
 								if(isThisDateValid(args[2],formato)) {
-									SimpleDateCountdown.cuentaRegresiva.setCountdownDate(args[2]);
 									//GUARDAR EN YAML
 								}
 								else {
