@@ -10,10 +10,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class SimpleDateCountdown extends JavaPlugin {
+	
 	public PluginDescriptionFile archivoPlugin = getDescription();
 	public String version = archivoPlugin.getVersion();
 	public String nombre = ChatColor.BOLD+""+ChatColor.DARK_RED+"["+ChatColor.GOLD+archivoPlugin.getName()+ChatColor.DARK_RED+"]";
-    public Countdown cuentaRegresiva;
+    public static Countdown cuentaRegresiva;
     public PluginManager pm;
     
     public SimpleDateCountdown() {
@@ -22,7 +23,7 @@ public class SimpleDateCountdown extends JavaPlugin {
     
 	public void onEnable() {
 		String fecha = "25/04/2020 12:30";
-		//Cargar datos cuenta regresiva
+		//Cargar datos cuenta regresiva desde config.yml
 		cuentaRegresiva = new Countdown("Prueba",fecha);
 		Bukkit.getConsoleSender().sendMessage("\n");
 		Bukkit.getConsoleSender().sendMessage(nombre+" ha sido cargado (Versión :"+version+")");

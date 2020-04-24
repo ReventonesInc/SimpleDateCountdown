@@ -103,4 +103,23 @@ public class Countdown{
         }
         return 0;
   	}
+    
+    public long getTimeRaimingSeconds(){
+    	
+    	Date finalDate;
+    	Calendar current = Calendar.getInstance();
+    	Date currentDate;
+    	String current_date = format.format(current.getTime());
+        try {
+        	finalDate = format.parse(countdownDate);
+            currentDate = format.parse(current_date);
+            long diffInMillies = finalDate.getTime() - currentDate.getTime();
+            long diffenceInSeconds = TimeUnit.SECONDS.convert(diffInMillies,TimeUnit.MILLISECONDS);
+            return diffenceInSeconds;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return 0;
+  	}
+    
 }
