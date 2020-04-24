@@ -2,6 +2,8 @@ package simplecountdown;
 
 import simplecountdown.commands.*;
 
+import java.io.File;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
@@ -10,8 +12,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class SimpleDateCountdown extends JavaPlugin {
-	
 	public PluginDescriptionFile archivoPlugin = getDescription();
+	public String rutaConfig;
 	public String version = archivoPlugin.getVersion();
 	public String nombre = ChatColor.BOLD+""+ChatColor.DARK_RED+"["+ChatColor.GOLD+archivoPlugin.getName()+ChatColor.DARK_RED+"]";
     public static Countdown cuentaRegresiva;
@@ -31,7 +33,7 @@ public class SimpleDateCountdown extends JavaPlugin {
 		
 		registerCommands();
 		registerEvents();
-
+		registerConfig();
 	}
 	
 	public void onDisable() {
@@ -46,6 +48,15 @@ public class SimpleDateCountdown extends JavaPlugin {
 		this.getCommand("countdown").setExecutor(new ComandoSdc(nombre,version,cuentaRegresiva));
 		
 	}
+	
+	public void registerConfig(){
+        File config = new File(this.getDataFolder(),"config.yml");
+        rutaConfig = config.getPath();
+        if(!config.exists()){
+            this.getConfig().options().copyDefaults(true);
+            saveConfig();
+        }
+    }
 
 	public void registerEvents() {
 		
