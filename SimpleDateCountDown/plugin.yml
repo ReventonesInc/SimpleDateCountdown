@@ -14,7 +14,7 @@ softdepend:
 commands:
     simpledatecountdown:
         description: Principal SDC Command
-        usage: /simpledatecountdown info|set|delete|enable|disable|reload
+        usage: /simpledatecountdown  info | set | delete | enable | disable | reload | remaining
         aliases:
           - countdown
           - sdc

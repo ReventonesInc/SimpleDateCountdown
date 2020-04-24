@@ -90,7 +90,7 @@ public class ComandoSdc implements CommandExecutor{
 				case "info":
 					//Muestra la info del plugin
 					jugador.sendMessage(ChatColor.GREEN+"------------"+appname+ChatColor.GREEN+"------------");
-                	jugador.sendMessage("             "+ChatColor.GOLD+"Versión instalada "+version);
+                	jugador.sendMessage(ChatColor.GREEN+"|                   "+ChatColor.GOLD+"Versión instalada: "+version+ChatColor.GREEN+"                |");
                 	jugador.sendMessage(ChatColor.GREEN+"------------------------------------------");
 					return true;
 				case "remaining":
